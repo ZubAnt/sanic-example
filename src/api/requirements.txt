@@ -1,0 +1,4 @@
+gunicorn
+injector
+python-dateutil
+sanic

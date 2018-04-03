@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  api:
+    build:
+      context: ../src/api
+    networks:
+      - backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../src/api/main.py:/tmp/api/main.py
+    env_file: .env
+    environment:
+      - PYTHONPATH=/usr/local/bin/python3.6
+    command: bash -c "cd /tmp/api/ && python3.6 main.py"
+
+networks:
+  backend:
