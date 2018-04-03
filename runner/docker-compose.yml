@@ -9,11 +9,11 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ../src/api/main.py:/tmp/api/main.py
+      - ../src/api/server:/tmp/api/server
     env_file: .env
     environment:
-      - PYTHONPATH=/usr/local/bin/python3.6
-    command: bash -c "cd /tmp/api/ && python3.6 main.py"
+      - PYTHONPATH=/tmp/api/
+    command: bash -c "cd /tmp/api/server && python3.6 app.py"
 
 networks:
   backend:
